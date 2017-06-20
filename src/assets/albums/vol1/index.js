@@ -1,0 +1,117 @@
+import COVER from './cover.jpg';
+
+export default {
+  id: '001',
+  gradientColors: ['#698aad', '#515e8a'],
+
+  cover: COVER,
+  jumbotron: COVER,
+  title: '1Hz Game Vol.1',
+  leader: 'Daily',
+  illust: 'Nyaosan',
+  mastering: 'UN1C0DE',
+  releaseDate: new Date(2017, 7 - 1, 22),
+  resources: [
+    {
+      type: 'video',
+      title: 'Video',
+      href: 'http://www.bilibili.com/video/av12010329',
+    },
+    {
+      type: 'audio',
+      title: 'Soundcloud',
+      href: 'https://soundcloud.com/ovjffjrm6bqb/1hzmusic1hzgame',
+    },
+    {
+      type: 'audio',
+      title: '网易云音乐',
+      href: 'https://music.163.com/#/album?id=35719476',
+    },
+  ],
+  tracks: [
+    {
+      title: 'Albino',
+      artist: 'Nyaosan',
+      genre: '2A03',
+      duration: [2, 35],
+      illust: 'Nyaosan',
+    },
+    {
+      title: 'WHOCARES!',
+      artist: '輪迴',
+      genre: 'Melbourne',
+      duration: [3, 6],
+      illust: '烟卷大仙',
+    },
+    {
+      title: 'Blueberry Popcorn',
+      artist: 'Tenkitsune',
+      genre: 'Future Bass',
+      duration: [3, 25],
+      illust: 'Crrispy',
+    },
+    {
+      title: 'Cognitive Impairment',
+      artist: "i'DLisT",
+      genre: 'Glitch House',
+      duration: [2, 12],
+      illust: 'As',
+    },
+    {
+      title: 'Mofmof Wonderland!',
+      artist: 'ああああ',
+      genre: '',
+      duration: [2, 43],
+      illust: 'Crrispy',
+    },
+    {
+      title: 'Thrust Skywards',
+      artist: '阿包',
+      genre: 'Dubstep',
+      duration: [3, 3],
+      illust: '烟卷大仙',
+    },
+    {
+      title: '1Hz',
+      artist: 'Daily',
+      genre: 'Experiment',
+      duration: [2, 14],
+      illust: 'As',
+    },
+    {
+      title: 'Mech Warrior',
+      artist: 'SLT',
+      genre: 'Drumstep',
+      duration: [1, 46],
+      illust: 'As',
+    },
+    {
+      title: 'WxW',
+      artist: '虎川',
+      genre: 'Trance',
+      duration: [2, 20],
+      illust: 'As',
+    },
+    {
+      title: 'Paralazyzmetricalisframen',
+      artist: 'UN1C0DE',
+      genre: 'Hardcore',
+      duration: [3, 53],
+      illust: '晨曦',
+    },
+    {
+      title: 'Silence Magic',
+      artist: 'Daily',
+      genre: 'Frenchcore',
+      duration: [1, 56],
+      illust: 'Crrispy',
+    },
+    {
+      title: 'に言いたいのは...',
+      artist: '洛奇',
+      genre: 'UTAU Pop',
+      duration: [3, 35],
+      illust: '阿米巴原虫',
+    },
+  ],
+};

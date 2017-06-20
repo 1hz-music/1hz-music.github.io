@@ -1,0 +1,307 @@
+$globalHorzGutter: 6rem;
+
+.page {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.header {
+  position: relative;
+  z-index: 100;
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 1.2rem $globalHorzGutter;
+
+  color: #fff;
+  background-color: rgba(#000, 0.4);
+  backdrop-filter: blur(4px);
+
+  &Logo {
+    height: 48px;
+    margin-right: 24px;
+  }
+
+  .nav {
+    margin: 0 4rem;
+
+    &Link {
+      color: #fff;
+
+      &:hover {
+        color: #d4d4d4;
+      }
+    }
+  }
+}
+
+.main {
+  flex: 1 0 auto;
+  height: 100%;
+}
+
+.albumGallery {
+  position: relative;
+  z-index: 0;
+  transition: all 0.45s 60ms ease-in-out;
+  overflow: hidden;
+
+  .album {
+    &BackgroundJumbotron,
+    &BackgroundGradient {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 45rem;
+    }
+
+    &BackgroundJumbotron {
+      background-size: cover;
+      background-position: center top;
+      filter: brightness(1.1) contrast(1.2) blur(4px);
+    }
+
+    &BackgroundGradient {
+      > svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        linearGradient > stop {
+          transition: all 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &Scroll {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    padding: 6rem 7.2em;
+
+    transition: padding-bottom 0.45s ease-in-out;
+
+    .album {
+      flex: 0 0 auto;
+
+      padding-right: $globalHorzGutter;
+      outline: 0;
+
+      > * {
+        z-index: 0;
+        position: relative;
+        display: block;
+
+        color: #fff;
+        font-size: 1.2rem;
+        text-align: center;
+        text-shadow: 0 2px 3px #000;
+
+        &::before {
+          z-index: -1;
+          content: ' ';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 0;
+          background-color: rgba(#000, 0.22);
+          backdrop-filter: blur(8px);
+
+          will-change: height;
+          transition: height 200ms ease-out;
+        }
+
+        &:hover,
+        &:focus {
+          .albumCover {
+            box-shadow: 0 8px 16px #000;
+            transform: translateY(-2px);
+          }
+
+          > ::before {
+            height: 100%;
+          }
+        }
+      }
+
+      &Cover {
+        display: block;
+        width: 15.5rem;
+        height: 15.5rem;
+        box-shadow: 0 4px 8px rgba(#000, 0.45);
+        transition: all 140ms ease-in-out;
+      }
+
+      &Meta {
+        padding: 1rem 2rem;
+      }
+
+      &.isSelected {
+        .albumCover {
+          box-shadow: 0 8px 16px #000;
+          transform: translateY(-2px);
+        }
+
+        > ::before {
+          height: 100%;
+          // height: calc(100% + 12rem);
+        }
+      }
+    }
+  }
+}
+
+.albumReleaseStatus {
+  margin-top: 4px;
+
+  :global(.tag).isReleased {
+    background-color: #1c941f;
+  }
+}
+
+.albumContent {
+  position: relative;
+  z-index: 0;
+  background: linear-gradient(to bottom, #121415, #020405);
+  padding: 0 $globalHorzGutter 4rem;
+
+  color: #fff;
+
+  &Wrapper {
+    filter: drop-shadow(0 0 8px #000);
+
+    .slopeTriangle {
+      display: block;
+
+      color: #121415;
+      width: 100%;
+      height: 6rem;
+    }
+  }
+
+  .closeToggle {
+    position: absolute;
+    top: -4rem;
+    right: $globalHorzGutter;
+
+    font-size: 3rem;
+    line-height: 0;
+  }
+
+  .albumBasicInfo {
+    margin-bottom: 4rem;
+  }
+}
+
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+
+  > .albumTracks {
+    flex: 1 0 auto;
+    min-width: 50%;
+    padding-right: 4rem;
+  }
+
+  > .albumRes {
+    flex: 0 0 auto;
+  }
+
+  > .albumTracks,
+  > .albumRes {
+    margin-bottom: 2rem;
+  }
+}
+
+.track {
+  &Table {
+    white-space: nowrap;
+    width: auto;
+    min-width: 32rem;
+    max-width: 100%;
+
+    thead > :last-child {
+      > th,
+      > td {
+        border-bottom: 1px solid #fff;
+      }
+    }
+  }
+
+  &Composer {
+    font-size: 0.7em;
+    color: #ccc;
+  }
+}
+
+.footer {
+  z-index: 1;
+  position: relative;
+  flex: 0 0 auto;
+  padding: 1.45rem $globalHorzGutter;
+  font-size: 0.88rem;
+  background-color: #efdddb;
+
+  > :global(.row) > * {
+    margin-top: 0.8rem;
+    margin-left: 64px;
+  }
+
+  &Logo {
+    width: 5rem;
+
+    &Wrapper {
+      margin-top: 0 !important;
+      margin-left: 0 !important;
+      margin-right: auto;
+    }
+  }
+
+  .eShopWrapper {
+    .qrCode {
+      width: 114px;
+      padding: 4px;
+      background-color: white;
+
+      + * {
+        color: #777;
+      }
+    }
+  }
+
+  .gugugu {
+    text-align: center;
+
+    > img {
+      width: 280px;
+    }
+  }
+
+  .copyright {
+    text-align: center;
+  }
+}
+
+.closeToggle {
+  line-height: 1;
+  color: #fff;
+  text-decoration: none !important;
+
+  &:hover,
+  &:focus {
+    color: #e0e0e0;
+  }
+
+  &:active {
+    color: #d4d4d4;
+  }
+}

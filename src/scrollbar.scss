@@ -1,0 +1,31 @@
+@import '~react-perfect-scrollbar/dist/css/styles.css';
+
+.ps {
+  &__thumb-x,
+  &__thumb-y {
+    background-color: rgba(#505050, 0.5);
+  }
+
+  &__rail-x,
+  &__rail-y {
+    background-color: transparent !important;
+
+    &:hover {
+      .ps {
+        &__thumb-x,
+        &__thumb-y {
+          background-color: rgba(#505050, 0.56);
+        }
+      }
+    }
+
+    &:active {
+      .ps {
+        &__thumb-x,
+        &__thumb-y {
+          background-color: rgba(#505050, 0.62);
+        }
+      }
+    }
+  }
+}

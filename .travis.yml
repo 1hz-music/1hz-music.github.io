@@ -1,0 +1,23 @@
+language: node_js
+node_js: stable
+
+script:
+  - yarn && yarn build
+
+after_script:
+  - cp -f ./public/CNAME ./dist/
+  - cd ./dist
+  - git init
+  - git config user.name "Jimmy Ben Klieve"
+  - git config user.email "j.b.klieve@live.cn"
+  - git add .
+  - git commit -m "update website"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+
+branches:
+  only:
+    - source
+
+env:
+  global:
+    - GH_REF: 'github.com/1hz-music/1hz-music.github.io.git'
