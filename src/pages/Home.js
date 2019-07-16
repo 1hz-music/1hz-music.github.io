@@ -21,7 +21,11 @@ import IconAudio from '../assets/i/audio';
 import IconVideo from '../assets/i/video';
 
 import IconLock from '../assets/i/lock';
+import IconUnlock from '../assets/i/unlock';
 import IconCheck from '../assets/i/check';
+import IconMapPin from '../assets/i/mappin';
+import IconCalendar from '../assets/i/calendar';
+import IconDesk from '../assets/i/desk';
 
 import QRCODE from '../assets/tb-qrcode.png';
 import GUGUGU from '../assets/gugugu.jpg';
@@ -63,7 +67,111 @@ const Home = (props) => {
 
   return (
     <div className={styles.page}>
+      <header className={styles.header}>
+        <img className={styles.headerLogo} src={LOGO} alt="1Hz Music" />
+
+        {/* <nav className={styles.nav}>
+          <Link className={styles.navLink} to="/">
+            Home
+          </Link>
+        </nav> */}
+      </header>
+
       <main className={styles.main}>
+        <section className={styles.exhibitions}>
+          <h1>Exhibitions</h1>
+
+          <section className={styles.exhibitionItem}>
+            <a
+              className={styles.exhibitionLocationMap}
+              href="https://map.baidu.com/poi/%E6%AD%A3%E5%A4%A7%E5%B9%BF%E5%9C%BA/@13526089.706422593,3641953.43028283,17.42z?uid=5fb82246fcf807f9bea240b60&info_merge=1&isBizPoi=false&ugc_type=3&ugc_ver=1&device_ratio=1&compat=1&querytype=detailConInfo&da_src=shareurl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="http://api.map.baidu.com/staticimage?width=360&height=240&center=121.506806,31.242865&zoom=17&markers=121.505962,31.242402&markerStyles=s,0&ak=jKF956d4IZw7jL4YWy89WwuuBj5Z9HIY"
+                alt="Location"
+              />
+            </a>
+
+            <div className={styles.exhibitionDetail}>
+              <h4>
+                <a
+                  href="https://shouxiaji.cn/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Furry Summer Gathering 兽夏祭
+                </a>
+              </h4>
+
+              <div>
+                <IconCalendar />
+                <time>2019/07/20</time>
+              </div>
+
+              <div>
+                <IconMapPin />
+                <address>
+                  No.168, West Lujiazui Road, Pudong District, Shanghai
+                  <br />
+                  上海市浦东新区陆家嘴西路168号正大广场
+                </address>
+              </div>
+
+              <div>
+                <IconDesk />
+                <span>Stand D-9</span>
+              </div>
+            </div>
+          </section>
+
+          <section className={styles.exhibitionItem}>
+            <a
+              className={styles.exhibitionLocationMap}
+              href="https://map.baidu.com/poi/%E9%9B%85%E6%82%A6%E6%96%B0%E5%A4%A9%E5%9C%B0%E5%A9%9A%E5%AE%B4%E5%B1%95%E4%BC%9A%E4%B8%AD%E5%BF%83/@13518522.964582931,3647363.3279271508,18.26z?uid=33d37a074b6954123a04b1cf&info_merge=1&isBizPoi=false&ugc_type=3&ugc_ver=1&device_ratio=1&compat=1&querytype=detailConInfo&da_src=shareurl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="http://api.map.baidu.com/staticimage?width=360&height=240&center=121.434048,31.281832&zoom=16&markers=121.438351,31.284046&markerStyles=s,0&ak=jKF956d4IZw7jL4YWy89WwuuBj5Z9HIY"
+                alt="Location"
+              />
+            </a>
+
+            <div className={styles.exhibitionDetail}>
+              <h4>
+                <a
+                  href="https://www.furrychina.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Furry China 极兽聚
+                </a>
+              </h4>
+
+              <div>
+                <IconCalendar />
+                <time>2019/07/28</time>
+              </div>
+
+              <div>
+                <IconMapPin />
+                <address>
+                  No.88, Gaoping Road, Jing'an District, Shanghai
+                  <br />
+                  上海市静安区高平路88号(近灵石路)雅悦新天地婚宴会展中心
+                </address>
+              </div>
+
+              <div>
+                <IconDesk />
+                <span>Stand D10</span>
+              </div>
+            </div>
+          </section>
+        </section>
+
         <section
           className={classNames(styles.albumGallery, {
             [styles.hasSelection]: state.selectedAlbum,
@@ -72,15 +180,7 @@ const Home = (props) => {
             backgroundColor: defaultGradientColors[0],
           }}
         >
-          <header className={styles.header}>
-            <img className={styles.headerLogo} src={LOGO} alt="1Hz Music" />
-
-            {/* <nav className={styles.nav}>
-              <Link className={styles.navLink} to="/">
-                Home
-              </Link>
-            </nav> */}
-          </header>
+          <h1>Albums</h1>
 
           <QueueAnim type="alpha" duration={500} ease="easeInOutSine">
             {currentAlbum?.jumbotron ? (
@@ -121,6 +221,7 @@ const Home = (props) => {
           >
             {sortedAlbums.map((alb) => {
               const isReleased = Date.now() >= alb.releaseDate;
+              const isUnlocked = alb.locked === false;
               const isSelected = alb.id === state.selectedAlbum?.id;
 
               return (
@@ -155,8 +256,18 @@ const Home = (props) => {
                             [styles.isReleased]: isReleased,
                           })}
                         >
-                          {isReleased ? <IconCheck /> : <IconLock />}
-                          {isReleased ? 'Released' : 'Locked'}
+                          {isReleased ? (
+                            <IconCheck />
+                          ) : isUnlocked ? (
+                            <IconUnlock />
+                          ) : (
+                            <IconLock />
+                          )}
+                          {isReleased
+                            ? 'Released'
+                            : isUnlocked
+                            ? 'Unlocked'
+                            : 'Locked'}
                         </span>
                       </div>
                     </div>
@@ -211,6 +322,8 @@ const Home = (props) => {
                           /** @type {Date} */
                           const rDate = state.selectedAlbum.releaseDate;
                           const isReleased = Date.now() >= rDate;
+                          const isUnlocked =
+                            state.selectedAlbum.locked === false;
                           const rDateFormatted = [
                             rDate.getFullYear(),
                             rDate.getMonth() + 1,
@@ -222,10 +335,10 @@ const Home = (props) => {
                           } else {
                             <span style={{ color: '#ccc' }}>
                               <span className="tag">
-                                <IconLock />
-                                Locked
+                                {isUnlocked ? <IconUnlock /> : <IconLock />}
+                                {isUnlocked ? 'Unlocked' : 'Locked'}
                               </span>
-                              &nbsp;Will be unlocked on {rDateFormatted}
+                              &nbsp;Will be released on {rDateFormatted}
                             </span>;
                           }
                         }}

@@ -18,8 +18,9 @@ $globalHorzGutter: 6rem;
   padding: 1.2rem $globalHorzGutter;
 
   color: #fff;
-  background-color: rgba(#000, 0.4);
-  backdrop-filter: blur(4px);
+  background-color: #121415;
+  // background-color: rgba(#000, 0.4);
+  // backdrop-filter: blur(4px);
 
   &Logo {
     height: 48px;
@@ -39,6 +40,63 @@ $globalHorzGutter: 6rem;
   }
 }
 
+.exhibitions {
+  flex: 0 0 auto;
+  padding: 4rem $globalHorzGutter;
+
+  color: #fff;
+  background: linear-gradient(to bottom, #121415, #242627);
+
+  > h1 {
+    margin-bottom: 2rem;
+  }
+
+  .exhibition {
+    &Item {
+      display: flex;
+      flex-flow: row nowrap;
+
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &LocationMap {
+      display: block;
+      flex: 0 0 auto;
+      margin-right: 2rem;
+
+      > img {
+        display: block;
+        width: 300px;
+      }
+    }
+
+    &Detail {
+      > div {
+        display: flex;
+        margin: 0;
+        margin-bottom: 1rem;
+
+        address {
+          font-style: normal;
+        }
+
+        :global(.icon) {
+          margin-top: .1em;
+          margin-right: .5em;
+
+          + * {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+
 .main {
   flex: 1 0 auto;
   height: 100%;
@@ -49,6 +107,15 @@ $globalHorzGutter: 6rem;
   z-index: 0;
   transition: all 0.45s 60ms ease-in-out;
   overflow: hidden;
+
+  > h1 {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    margin: 0;
+    padding: 2rem $globalHorzGutter 0;
+    text-shadow: 0 4px 8px #242627;
+  }
 
   .album {
     &BackgroundJumbotron,
@@ -84,7 +151,7 @@ $globalHorzGutter: 6rem;
     z-index: 1;
     position: relative;
     display: flex;
-    padding: 6rem 7.2em;
+    padding: 2rem $globalHorzGutter 6rem;
 
     transition: padding-bottom 0.45s ease-in-out;
 

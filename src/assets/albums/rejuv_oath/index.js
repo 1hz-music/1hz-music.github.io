@@ -12,6 +12,19 @@ export default {
   design: '横尾太喵',
   mastering: 'Nascent Nova',
   releaseDate: new Date(2019, 7 - 1, 20),
+  locked: false,
+  resources: [
+    {
+      type: 'audio',
+      title: 'Soundcloud',
+      href: 'https://soundcloud.com/ovjffjrm6bqb/rejuvenationoath-xfd',
+    },
+    {
+      type: 'audio',
+      title: '网易云音乐',
+      href: 'https://music.163.com/#/song?id=1377544898',
+    },
+  ],
   tracks: [
     {
       title: 'Alice',

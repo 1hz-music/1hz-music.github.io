@@ -12,6 +12,19 @@ export default {
   design: ['横尾太喵', 'Enma'],
   mastering: 'UN1C0DE',
   releaseDate: new Date(2019, 7 - 1, 20),
+  locked: false,
+  resources: [
+    {
+      type: 'audio',
+      title: 'Soundcloud',
+      href: 'https://soundcloud.com/ovjffjrm6bqb/collage-of-urbanity-xfd',
+    },
+    {
+      type: 'audio',
+      title: '网易云音乐',
+      href: 'https://music.163.com/#/song?id=1377556157',
+    },
+  ],
   tracks: [
     {
       title: 'Afar',
