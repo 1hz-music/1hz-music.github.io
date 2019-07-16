@@ -121,7 +121,7 @@ const Home = (props) => {
 
               <div>
                 <IconDesk />
-                <span>Stand D-9</span>
+                <span>Stand B-9</span>
               </div>
             </div>
           </section>
@@ -166,7 +166,7 @@ const Home = (props) => {
 
               <div>
                 <IconDesk />
-                <span>Stand D10</span>
+                <span>Stand B10</span>
               </div>
             </div>
           </section>
