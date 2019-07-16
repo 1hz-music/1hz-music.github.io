@@ -89,7 +89,7 @@ const Home = (props) => {
               rel="noopener noreferrer"
             >
               <img
-                src="http://api.map.baidu.com/staticimage?width=360&height=240&center=121.506806,31.242865&zoom=17&markers=121.505962,31.242402&markerStyles=s,0&ak=jKF956d4IZw7jL4YWy89WwuuBj5Z9HIY"
+                src="//api.map.baidu.com/staticimage?width=360&height=240&center=121.506806,31.242865&zoom=17&markers=121.505962,31.242402&markerStyles=s,0&ak=jKF956d4IZw7jL4YWy89WwuuBj5Z9HIY"
                 alt="Location"
               />
             </a>
@@ -134,7 +134,7 @@ const Home = (props) => {
               rel="noopener noreferrer"
             >
               <img
-                src="http://api.map.baidu.com/staticimage?width=360&height=240&center=121.434048,31.281832&zoom=16&markers=121.438351,31.284046&markerStyles=s,0&ak=jKF956d4IZw7jL4YWy89WwuuBj5Z9HIY"
+                src="//api.map.baidu.com/staticimage?width=360&height=240&center=121.434048,31.281832&zoom=16&markers=121.438351,31.284046&markerStyles=s,0&ak=jKF956d4IZw7jL4YWy89WwuuBj5Z9HIY"
                 alt="Location"
               />
             </a>
