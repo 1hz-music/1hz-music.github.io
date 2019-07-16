@@ -146,7 +146,7 @@ const Home = (props) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Furry China 极兽聚
+                  Super Furry Fusion 极兽聚
                 </a>
               </h4>
 
