@@ -60,7 +60,7 @@ export default {
     {
       title: 'Mofmof Wonderland!',
       artist: 'ああああ',
-      genre: '',
+      genre: 'Pop',
       duration: [2, 43],
       illust: 'Crrispy',
     },

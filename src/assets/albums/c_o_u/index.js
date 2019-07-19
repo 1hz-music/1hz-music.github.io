@@ -41,7 +41,7 @@ export default {
     {
       title: 'Drizzling',
       artist: 'Tanchiky',
-      genre: 'Post-Jazz',
+      genre: 'Post Jazz',
       duration: [4, 52],
     },
     {
@@ -89,7 +89,7 @@ export default {
     {
       title: 'Starfiled',
       artist: 'Rocky',
-      genre: 'Post-Rock',
+      genre: 'Post Rock',
       duration: [3, 27],
     },
   ],

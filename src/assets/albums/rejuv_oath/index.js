@@ -8,7 +8,7 @@ export default {
   jumbotron: COVER,
   title: 'Rejuvenation:oath',
   leader: 'Daily',
-  illust: '小叶',
+  illust: '豹豹',
   design: '横尾太喵',
   mastering: 'Nascent Nova',
   releaseDate: new Date(2019, 7 - 1, 20),
