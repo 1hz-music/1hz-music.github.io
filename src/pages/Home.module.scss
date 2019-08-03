@@ -40,63 +40,6 @@ $globalHorzGutter: 6rem;
   }
 }
 
-.exhibitions {
-  flex: 0 0 auto;
-  padding: 4rem $globalHorzGutter;
-
-  color: #fff;
-  background: linear-gradient(to bottom, #121415, #242627);
-
-  > h1 {
-    margin-bottom: 2rem;
-  }
-
-  .exhibition {
-    &Item {
-      display: flex;
-      flex-flow: row nowrap;
-
-      margin-bottom: 2rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    &LocationMap {
-      display: block;
-      flex: 0 0 auto;
-      margin-right: 2rem;
-
-      > img {
-        display: block;
-        width: 300px;
-      }
-    }
-
-    &Detail {
-      > div {
-        display: flex;
-        margin: 0;
-        margin-bottom: 1rem;
-
-        address {
-          font-style: normal;
-        }
-
-        :global(.icon) {
-          margin-top: .1em;
-          margin-right: .5em;
-
-          + * {
-            display: inline-block;
-          }
-        }
-      }
-    }
-  }
-}
-
 .main {
   flex: 1 0 auto;
   height: 100%;
