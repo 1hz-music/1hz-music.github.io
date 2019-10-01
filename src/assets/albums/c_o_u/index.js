@@ -18,11 +18,13 @@ export default {
       type: 'audio',
       title: 'Soundcloud',
       href: 'https://soundcloud.com/ovjffjrm6bqb/collage-of-urbanity-xfd',
+      embed: null,
     },
     {
       type: 'audio',
       title: '网易云音乐',
       href: 'https://music.163.com/#/song?id=1377556157',
+      embed: null,
     },
   ],
   tracks: [

@@ -18,16 +18,19 @@ export default {
       type: 'video',
       title: 'Video',
       href: 'https://www.bilibili.com/video/av26634532',
+      embed: null,
     },
     {
       type: 'audio',
       title: 'Soundcloud',
       href: 'https://soundcloud.com/ovjffjrm6bqb/night-guardianpreview',
+      embed: null,
     },
     {
       type: 'audio',
       title: '网易云音乐',
       href: 'https://music.163.com/#/song?id=864765144',
+      embed: null,
     },
   ],
   tracks: [

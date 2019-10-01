@@ -17,16 +17,19 @@ export default {
       type: 'video',
       title: 'Video',
       href: 'https://music.163.com/#/video?id=D75347A5CD209749A8A616A696705CDA',
+      embed: null,
     },
     {
       type: 'audio',
       title: 'Soundcloud',
       href: 'https://soundcloud.com/ovjffjrm6bqb/1hzgame-vol2preview',
+      embed: null,
     },
     {
       type: 'audio',
       title: '网易云音乐',
       href: 'https://music.163.com/#/song?id=864356561',
+      embed: null,
     },
   ],
   tracks: [

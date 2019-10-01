@@ -16,16 +16,19 @@ export default {
       type: 'video',
       title: 'Video',
       href: 'http://www.bilibili.com/video/av12010329',
+      embed: null,
     },
     {
       type: 'audio',
       title: 'Soundcloud',
       href: 'https://soundcloud.com/ovjffjrm6bqb/1hzmusic1hzgame',
+      embed: null,
     },
     {
       type: 'audio',
       title: '网易云音乐',
       href: 'https://music.163.com/#/album?id=35719476',
+      embed: null,
     },
   ],
   tracks: [

@@ -25,8 +25,13 @@ import IconLock from '../assets/i/lock';
 import IconUnlock from '../assets/i/unlock';
 import IconCheck from '../assets/i/check';
 
+import IconDesk from '../assets/i/desk';
+import IconCalendar from '../assets/i/calendar';
+
 import QRCODE from '../assets/tb-qrcode.png';
 import GUGUGU from '../assets/gugugu.jpg';
+
+import EXHIB_JP_TOKYO_TRC from '../assets/tokyo_trc_10_27.jpg';
 
 const sortedAlbums = Object.values(ALBUMS).sort((a, b) => {
   if (a.releaseDate < b.releaseDate) {
@@ -77,6 +82,34 @@ const Home = (props) => {
 
       <main className={styles.main}>
         <section
+          className={styles.exhibitions}
+          style={{
+            backgroundColor: defaultGradientColors[0],
+          }}
+        >
+          <h1>Exhibitions</h1>
+
+          <div>
+            <div className={styles.exhibition}>
+              <img
+                src={EXHIB_JP_TOKYO_TRC}
+                alt="東京流通センター(TRC) い-22a 10/27(Sun)"
+              />
+
+              <ul className={styles.exhibitionInfo}>
+                <li>東京流通センター(TRC)</li>
+                <li>
+                  <IconCalendar /> 10/27(Sun)
+                </li>
+                <li>
+                  <IconDesk /> い-22a
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section
           className={classNames(styles.albumGallery, {
             [styles.hasSelection]: state.selectedAlbum,
           })}
@@ -120,6 +153,7 @@ const Home = (props) => {
           </QueueAnim>
 
           <PerfectScrollbar
+            key="scrollbar"
             className={styles.albumGalleryScroll}
             component="section"
           >
@@ -129,13 +163,12 @@ const Home = (props) => {
               const isSelected = alb.id === state.selectedAlbum?.id;
 
               return (
-                <div
-                  key={alb.id}
-                  className={classNames(styles.album, {
-                    [styles.isSelected]: isSelected,
-                  })}
-                >
+                <div key={alb.id} className={styles.albumWrap}>
                   <Link
+                    key={alb.id}
+                    className={classNames(styles.album, {
+                      [styles.isSelected]: isSelected,
+                    })}
                     to={`/album/${alb.id.toLowerCase()}`}
                     onMouseOver={() =>
                       void setState({ ...state, hoveredAlbum: alb })
@@ -150,30 +183,13 @@ const Home = (props) => {
                       void setState({ ...state, hoveredAlbum: null })
                     }
                   >
-                    <img className={styles.albumCover} src={alb.cover} alt="" />
-
-                    <div className={styles.albumMeta}>
+                    <div
+                      className={styles.albumBackground}
+                      style={{
+                        backgroundImage: `url(${alb.cover})`,
+                      }}
+                    >
                       <div className={styles.albumName}>{alb.title}</div>
-                      <div className={styles.albumReleaseStatus}>
-                        <span
-                          className={classNames('tag', {
-                            [styles.isReleased]: isReleased,
-                          })}
-                        >
-                          {isReleased ? (
-                            <IconCheck />
-                          ) : isUnlocked ? (
-                            <IconUnlock />
-                          ) : (
-                            <IconLock />
-                          )}
-                          {isReleased
-                            ? 'Released'
-                            : isUnlocked
-                            ? 'Unlocked'
-                            : 'Locked'}
-                        </span>
-                      </div>
                     </div>
                   </Link>
                 </div>
@@ -273,7 +289,7 @@ const Home = (props) => {
                                 const [dm, ds] = track.duration;
 
                                 return (
-                                  <tr>
+                                  <tr key={index}>
                                     <td>{track.index || index + 1}</td>
                                     <td>
                                       <div>{track.title}</div>

@@ -1,4 +1,7 @@
 $globalHorzGutter: 6rem;
+$easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
+$easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1);
+$easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1);
 
 .page {
   display: flex;
@@ -43,6 +46,39 @@ $globalHorzGutter: 6rem;
 .main {
   flex: 1 0 auto;
   height: 100%;
+}
+
+.exhibitions {
+  color: #fff;
+
+  > h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 2rem $globalHorzGutter 0;
+    text-shadow: 0 4px 8px #242627;
+  }
+
+  .exhibition {
+    padding: 2rem $globalHorzGutter;
+    display: flex;
+    flex-flow: row nowrap;
+
+    img {
+      height: 480px;
+      margin-right: 2rem;
+      box-shadow: 0 2px 8px rgba(#000, 0.45);
+    }
+
+    &Info {
+      margin: 0;
+      font-size: 2rem;
+
+      > li:first-child {
+        font-size: 2.5rem;
+      }
+    }
+  }
 }
 
 .albumGallery {
@@ -99,15 +135,35 @@ $globalHorzGutter: 6rem;
     transition: padding-bottom 0.45s ease-in-out;
 
     .album {
-      flex: 0 0 auto;
+      &Wrap {
+        padding-right: $globalHorzGutter;
+        flex: 0 0 auto;
+      }
 
-      padding-right: $globalHorzGutter;
+      display: block;
+      width: 220px;
+      height: 380px;
       outline: 0;
 
-      > * {
-        z-index: 0;
+      perspective: 1200px;
+      box-shadow: 0 2px 8px rgba(#000, 0.55);
+      transition: all 1s $easeOutCirc;
+
+      &Background {
         position: relative;
-        display: block;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        background-color: #888;
+        background-size: cover;
+        background-position: center;
+        transition: all 1s $easeOutCirc;
+        transform-style: preserve-3d;
+        overflow: hidden;
+
+        z-index: 0;
 
         color: #fff;
         font-size: 1.2rem;
@@ -115,66 +171,62 @@ $globalHorzGutter: 6rem;
         text-shadow: 0 2px 3px #000;
 
         &::before {
-          z-index: -1;
           content: ' ';
-          display: block;
+          z-index: 1;
           position: absolute;
-          top: 0;
+          display: block;
+          top: -50%;
           left: 0;
           width: 100%;
-          height: 0;
-          background-color: rgba(#000, 0.22);
-          backdrop-filter: blur(8px);
+          height: 100%;
+          opacity: 0.5;
+          background-image: linear-gradient(
+            30deg,
+            rgba(#fff, 0) 47%,
+            rgba(#fff, 0.2) 52%,
+            rgba(#fff, 0.02)
+          );
 
-          will-change: height;
-          transition: height 200ms ease-out;
+          transition: all 1s $easeOutCirc;
         }
+      }
 
-        &:hover,
-        &:focus {
-          .albumCover {
-            box-shadow: 0 8px 16px #000;
-            transform: translateY(-2px);
-          }
+      &:hover,
+      &:focus {
+        box-shadow: 0 16px 10px 6px rgba(#000, 0.55);
 
-          > ::before {
-            height: 100%;
+        .albumBackground {
+          transform: rotateX(5deg) translateZ(48px) translateY(4px);
+
+          &::before {
+            top: -10%;
+            opacity: 1;
           }
         }
       }
 
-      &Cover {
-        display: block;
-        width: 15.5rem;
-        height: 15.5rem;
-        box-shadow: 0 4px 8px rgba(#000, 0.45);
-        transition: all 140ms ease-in-out;
-      }
-
-      &Meta {
-        padding: 1rem 2rem;
+      &Name {
+        position: relative;
+        padding: 64px 32px 16px;
+        background: linear-gradient(to top, rgba(#000, 0.15), transparent);
+        user-select: none;
       }
 
       &.isSelected {
-        .albumCover {
-          box-shadow: 0 8px 16px #000;
-          transform: translateY(-2px);
-        }
+        box-shadow: 0 14px 12px 10px rgba(#000, 0.66);
 
-        > ::before {
-          height: 100%;
-          // height: calc(100% + 12rem);
+        .album {
+          &Background {
+            transform: translateZ(64px);
+
+            &::before {
+              top: 0;
+              opacity: 1;
+            }
+          }
         }
       }
     }
-  }
-}
-
-.albumReleaseStatus {
-  margin-top: 4px;
-
-  :global(.tag).isReleased {
-    background-color: #1c941f;
   }
 }
 
