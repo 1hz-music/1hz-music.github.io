@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5f4cff10.chunk.css",
+    "main.js": "/static/js/main.ea91e3e1.chunk.js",
+    "main.js.map": "/static/js/main.ea91e3e1.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.ac1ce0ba.chunk.css": "/static/css/2.ac1ce0ba.chunk.css",
+    "static/js/2.b4e63f1e.chunk.js": "/static/js/2.b4e63f1e.chunk.js",
+    "static/js/2.b4e63f1e.chunk.js.map": "/static/js/2.b4e63f1e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.e6581de2720230681bbfc0a1d3e412a6.js": "/precache-manifest.e6581de2720230681bbfc0a1d3e412a6.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.ac1ce0ba.chunk.css.map": "/static/css/2.ac1ce0ba.chunk.css.map",
+    "static/css/main.5f4cff10.chunk.css.map": "/static/css/main.5f4cff10.chunk.css.map",
+    "static/media/1hz.svg": "/static/media/1hz.0e442b7e.svg",
+    "static/media/1hz_white.svg": "/static/media/1hz_white.46d60e77.svg",
+    "static/media/cover.jpg": "/static/media/cover.9e65fbcf.jpg",
+    "static/media/gugugu.jpg": "/static/media/gugugu.e24cc277.jpg",
+    "static/media/jumbotron.jpg": "/static/media/jumbotron.980dd9ab.jpg",
+    "static/media/index.scss": "/static/media/munro-webfont.e79fe0f1.woff",
+    "static/media/tokyo_trc_10_27.jpg": "/static/media/tokyo_trc_10_27.1d7f26ae.jpg"
+  }
+}
